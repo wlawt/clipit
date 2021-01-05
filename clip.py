@@ -9,7 +9,7 @@ while True:
     print("Starting to record")
 
     fileName = datetime.now().strftime("%d%m%Y%H%M%S")
-    file = "./clips/" + fileName + ".avi"
+    file = "./clipit/clips/" + fileName + ".avi"
 
     codec = cv2.VideoWriter_fourcc(*"XVID")
     out = cv2.VideoWriter(file, codec, 60, (1920, 1080))
