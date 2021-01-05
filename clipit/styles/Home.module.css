@@ -29,13 +29,18 @@
   margin-left: 0.5rem;
 }
 
-.footer a {
+/* .footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.footerText {
   color: #0070f3;
   text-decoration: none;
 }
@@ -45,6 +50,7 @@
 .title a:active {
   text-decoration: underline;
 }
+
 
 .title {
   margin: 0;
