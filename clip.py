@@ -2,6 +2,8 @@ import cv2
 import pyautogui
 import numpy as np
 import keyboard
+import ffmpy
+import os
 from datetime import datetime
 
 while True:
@@ -26,3 +28,12 @@ while True:
     
     out.release()
     cv2.destroyAllWindows()
+
+    mp4_file = "./clipit/clips/" + fileName + ".mp4"
+    ff = ffmpy.FFmpeg(
+      inputs={file:None},
+      outputs={mp4_file:None}
+    )
+
+    ff.run()
+    os.remove(file)
