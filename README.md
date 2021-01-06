@@ -1,11 +1,14 @@
-### Main monitor
-ffmpeg -f gdigrab -framerate 30 -video_size 1920x1080 -show_region 1 -i desktop output.mkv
+<div align="center">
+  <img src="assets/clipit.jpg" alt="ClipIt - Snipping Tool for Videos">
 
-### Left monitor from the main
-ffmpeg -f gdigrab -framerate 30 -offset_x -1920 -offset_y 0 -video_size 1920x1080 -show_region 1 -i desktop output.mkv
+  # ClipIt — Snipping Tool for Videos 📎
+</div>
 
-### Right monitor from the main
-ffmpeg -f gdigrab -framerate 30 -offset_x 1920 -offset_y 0 -video_size 1920x1080 -show_region 1 -i desktop output.mkv
+### ClipIt 
 
-### Capture a particular application
-ffmpeg -f gdigrab -framerate 30 -i title=clipit o.mkv
+Largely inspired by frustrations in my academic workflows, I wanted a way to 
+easily share explanations/concepts with my friends, just like how I use 
+Snipping Tool. 
+
+ClipIt is built ontop of this idea with the goal of making it easy to share
+videos clips with others.
