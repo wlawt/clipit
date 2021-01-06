@@ -13,15 +13,20 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          ClipIt
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        {/* <ReactPlayer url="./05012021153052.mp4" controls /> */}
+        {/* <div className={styles.videoContainer}>
+          <video width="1000" height="500" controls>
+            <source src={require("../clips/05012021153052.mp4")} type="video/mp4" />
+          </video>
+        </div> */}
 
-        <ReactPlayer url="./05012021153052.mp4" controls />
+        {/* width={`"${styles.videoWidth}"`} height={`${styles.videoHeight}`} */}
+        <video width="850" controls>
+          <source src={require("../clips/05012021153052.mp4")} type="video/mp4" />
+        </video>
       </main>
 
       <footer className={styles.footer}>
