@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>ClipIt - Snipping Tool for Videos</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -34,6 +34,8 @@ export default function Home() {
         <h1 className={styles.title}>
           ClipIt
         </h1>
+
+        <p className="description">Snipping Tool but for Videos 😎</p>
 
         {/* <div className={styles.videoContainer}>
           <video width="1000" height="500" controls>
