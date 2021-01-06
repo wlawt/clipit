@@ -10,7 +10,7 @@ while True:
   if keyboard.is_pressed('F2'):
     print("Starting to record")
 
-    fileName = datetime.now().strftime("%d%m%Y%H%M%S")
+    fileName = datetime.now().strftime("%d%m%Y%H%M%S") # avoid name conflict
     file = "./clipit/clips/" + fileName + ".avi"
 
     codec = cv2.VideoWriter_fourcc(*"XVID")
@@ -29,6 +29,7 @@ while True:
     out.release()
     cv2.destroyAllWindows()
 
+    # Convert .avi to .mp4
     mp4_file = "./clipit/clips/" + fileName + ".mp4"
     ff = ffmpy.FFmpeg(
       inputs={file:None},
@@ -36,4 +37,4 @@ while True:
     )
 
     ff.run()
-    os.remove(file)
+    os.remove(file) # remove .avi file
