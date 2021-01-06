@@ -1,9 +1,10 @@
+// source: https://stackoverflow.com/questions/15696218/get-the-most-recent-file-in-a-directory-node-js
+
 const fs = require('fs');
 const path = require('path');
 const _ = require('underscore');
 
-// Return only base file name without dir
-function getRecentClip(dir) {
+const getRecentClip = dir => {
   var files = fs.readdirSync(dir);
 
   // use underscore for max()
@@ -14,4 +15,8 @@ function getRecentClip(dir) {
     // replace with mtime for modification time
     return fs.statSync(fullpath).ctime;
   });
+}
+
+export default (req, res) => {
+  res.status(200).json(getRecentClip("D:/CodingFolder/clipit/clipit/clips/"))
 }
