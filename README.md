@@ -13,9 +13,24 @@ Snipping Tool.
 ClipIt is built ontop of this idea with the goal of making it easy to share
 videos clips with others.
 
+## How it works
+
+The screen recording is handled by a python script, `clip.py`, which uses 
+OpenCV and listens for a keypress to start/stop the recording. For my use, 
+this is set as F4 and F8 to start and stop the recording, respectively. 
+
+_This is editable in the `clip.py` file, found in the root of the project._
+
+The frontend used Next.js, as it this was also a learning opportunity for me
+to try out new JS frameworks. 
+
+One of the major design decisions was to minimize the footprint and intuitive 
+as Snipping Tool or Lightshot. The idea is to serve these video clips via a 
+link through an ngrok tunnel and send the link with the latest clip.
+
 ## Run locally
 
-#### Install dependencies
+### Install dependencies
 
 ```
 pip install -r requirements.txt
