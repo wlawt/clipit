@@ -1,0 +1,7 @@
+opencv-python
+pyautogui
+numpy
+keyboard
+ffmpy
+datetime
+selenium
