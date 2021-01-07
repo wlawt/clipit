@@ -5,6 +5,7 @@ import keyboard
 import ffmpy
 import os
 import urllib
+# import time
 from datetime import datetime
 from selenium import webdriver
 
@@ -16,12 +17,13 @@ while True:
     file = "./clipit/clips/" + fileName + ".avi"
 
     codec = cv2.VideoWriter_fourcc(*"XVID")
-    out = cv2.VideoWriter(file, codec, 60, (1920, 1080))
+    out = cv2.VideoWriter(file, codec, 30, (1920, 1080))
 
     while True:
       img = pyautogui.screenshot()
       frame = np.array(img)
       frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+      # time.sleep(0.16)
       out.write(frame)
 
       if keyboard.is_pressed('F8'):
