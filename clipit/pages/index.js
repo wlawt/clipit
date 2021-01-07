@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const getFilename = async () => {
-      const name = await Axios.get("http://localhost:3000/api/fileRetriever")
+      const name = await Axios.get("/api/fileRetriever")
 
       if (name.status === 200 && name) {
         setFileName(name.data)
@@ -38,7 +38,7 @@ export default function Home() {
         <p className="description">Snipping Tool but for Videos 😎</p>
 
         {/* <div className={styles.videoContainer}>
-          <video width="1000" height="500" controls>
+          <video width="850" height="480" controls>
             <source src={require("../clips/05012021153052.mp4")} type="video/mp4" />
           </video>
         </div> */}
