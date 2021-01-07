@@ -15,11 +15,11 @@ videos clips with others.
 
 ## How it works
 
-The screen recording is handled by a python script, `clip.py`, which uses 
+The screen recording is handled by a python script, [`clip.py`](https://github.com/wlawt/clipit/blob/master/clip.py), which uses 
 OpenCV and listens for a keypress to start/stop the recording. For my use, 
 this is set as F4 and F8 to start and stop the recording, respectively. 
 
-_This is editable in the `clip.py` file, found in the root of the project._
+_This is editable in the [`clip.py`](https://github.com/wlawt/clipit/blob/master/clip.py) file, found in the root of the project._
 
 The frontend used Next.js, as it this was also a learning opportunity for me
 to try out new JS frameworks. 
