@@ -43,5 +43,6 @@ npm install
 ```
 python clip.py  // In root
 cd clipit 
-yarn dev
+npm run dev
+npm run ngrok
 ```
