@@ -6,7 +6,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "ngrok": "ngrok http 3000"
+    "ngrok": "ngrok http 3000",
+    "local": "concurrently \"npm run dev\" \"npm run ngrok\""
   },
   "dependencies": {
     "axios": "^0.21.1",
