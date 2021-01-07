@@ -34,3 +34,5 @@ yarn-error.log*
 .vercel
 
 /clips
+
+package-lock.json
