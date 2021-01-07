@@ -4,10 +4,12 @@ import numpy as np
 import keyboard
 import ffmpy
 import os
+import urllib
 from datetime import datetime
+from selenium import webdriver
 
 while True:
-  if keyboard.is_pressed('F2'):
+  if keyboard.is_pressed('F4'):
     print("Starting to record")
 
     fileName = datetime.now().strftime("%d%m%Y%H%M%S") # avoid name conflict
@@ -22,8 +24,8 @@ while True:
       frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
       out.write(frame)
 
-      if keyboard.is_pressed('F4'):
-        print("%s Key pressed." % 'F4')
+      if keyboard.is_pressed('F8'):
+        print("%s Key pressed." % 'F8')
         break
     
     out.release()
@@ -38,3 +40,10 @@ while True:
 
     ff.run()
     os.remove(file) # remove .avi file
+
+""" print("Reloading with new site")
+    driver = webdriver.Chrome()
+    driver.get("http://localhost:3000")
+    driver.refresh()
+    time.sleep(3)
+    driver.quit() """
