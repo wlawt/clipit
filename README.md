@@ -52,3 +52,9 @@ cd clipit
 npm run dev
 npm run ngrok
 ```
+
+## Screenshots
+
+<div align="center">
+  <img src="assets/demo.jpg" alt="ClipIt Demo">
+</div>
