@@ -17,7 +17,9 @@ videos clips with others.
 
 The screen recording is handled by a python script, [`clip.py`](https://github.com/wlawt/clipit/blob/master/clip.py), which uses 
 OpenCV and listens for a keypress to start/stop the recording. For my use, 
-this is set as F4 and F8 to start and stop the recording, respectively. 
+this is set as F4 and F8 to start and stop the recording, respectively. Addition:
+Microphone support is enabled when you hit F4 and will stop recording audio input
+when F8 is pressed. Ffmpeg is used to stitch together the audio and video clip.
 
 _This is editable in the [`clip.py`](https://github.com/wlawt/clipit/blob/master/clip.py) file, found in the root of the project._
 
@@ -34,6 +36,9 @@ link through an ngrok tunnel and send the link with the latest clip.
 
 ```
 pip install -r requirements.txt
+pip install pipwin
+pipwin install pyaudio
+
 cd clipit
 npm install
 ```
@@ -42,6 +47,7 @@ npm install
 
 ```
 python clip.py  // In root
+
 cd clipit 
 npm run dev
 npm run ngrok
