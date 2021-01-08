@@ -56,5 +56,5 @@ npm run ngrok
 ## Screenshots
 
 <div align="center">
-  <img src="assets/demo.jpg" alt="ClipIt Demo">
+  <img src="assets/new demo.jpg" alt="ClipIt Demo">
 </div>
