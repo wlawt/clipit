@@ -34,7 +34,7 @@ One of the major design decisions was to minimize the footprint and make it intu
 as Snipping Tool or Lightshot. The idea is to serve these video clips via a 
 link through an ngrok tunnel and send the link with the latest clip.
 
-## Run locally
+## Using ClipIt
 
 ### Install dependencies
 
