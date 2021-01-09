@@ -2,6 +2,6 @@ opencv-python
 pyautogui
 numpy
 keyboard
-ffmpy
 datetime
-selenium
+ray
+win10toast
