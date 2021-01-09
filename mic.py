@@ -131,8 +131,3 @@ def record_to_file(path):
     wf.setframerate(RATE)
     wf.writeframes(data)
     wf.close()
-
-""" if __name__ == '__main__':
-    print("please speak a word into the microphone")
-    record_to_file('demo.wav')
-    print("done - result written to demo.wav") """
