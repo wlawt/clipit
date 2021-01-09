@@ -2,7 +2,6 @@ import cv2
 import pyautogui
 import numpy as np
 import keyboard
-import ffmpy
 import os
 import urllib
 import ray
