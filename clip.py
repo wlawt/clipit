@@ -6,14 +6,17 @@ import os
 import urllib
 import ray
 import subprocess
+
 from datetime import datetime
 from mic import record_to_file
+from win10toast import ToastNotifier
 
 # Run funcs in parallel
 ray.init()
+toaster = ToastNotifier()
 
 @ray.remote
-def VideoRecord():
+def VideoRecord(file):
   codec = cv2.VideoWriter_fourcc(*"XVID")
   out = cv2.VideoWriter(file, codec, 30, (1920, 1080))
 
@@ -24,6 +27,8 @@ def VideoRecord():
     out.write(frame)
 
     if keyboard.is_pressed('F8'):
+      # icon_path="./clipit/public/logo.jpg"
+      # toaster.show_toast("Clip It","Stopping recording...", duration=5)
       print("%s Key pressed." % 'F8')
       break
   
@@ -36,6 +41,7 @@ def MicRecord(micPath):
 
 while True:
   if keyboard.is_pressed('F4'):
+    # toaster.show_toast("Clip It","Starting to record...", duration=5)
     print("Starting to record")
 
     fileName = datetime.now().strftime("%d%m%Y%H%M%S") # avoid name conflict
@@ -45,7 +51,7 @@ while True:
     clipPath = "./clipit/clips/" + fileName + ".mp4"
     
     # Run concurrently
-    out_vid = VideoRecord.remote()
+    out_vid = VideoRecord.remote(orgClip)
     out_mic = MicRecord.remote(micPath)
 
     vid, mic = ray.get([out_vid, out_mic])
