@@ -27,7 +27,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>ClipIt - Snipping Tool for Videos</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.jpg" />
       </Head>
 
       <main className={styles.main}>
