@@ -64,3 +64,8 @@ that python Thread or Multiprocessing libraries have a [slight delay](https://st
 execution of the functions (recording Audio and Video), which doesn't meet my UX requirements. I found that
 I had to press F8 twice inorder to end the Audio recording. However, as [this comment](https://stackoverflow.com/a/54509012/13283328)
 suggested, the Ray library is able to run both the Audio and Video recording functions at the same time.
+
+## Contribution
+
+I'm always open to improving the quality of this project. If there's a feature request, 
+performance improvement, or bug fixes that you found, feel free to submit a PR!
