@@ -8,7 +8,6 @@ import urllib
 import ray
 import subprocess
 from datetime import datetime
-from selenium import webdriver
 from mic import record_to_file
 
 ray.init()
