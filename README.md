@@ -13,6 +13,10 @@ Snipping Tool.
 ClipIt is built ontop of this idea with the goal of making it easy to share
 videos clips with others.
 
+<div align="center">
+  <img src="assets/new demo.jpg" alt="ClipIt Demo">
+</div>
+
 ## How it works
 
 The screen recording is handled by a python script, [`clip.py`](https://github.com/wlawt/clipit/blob/master/clip.py), which uses 
@@ -26,7 +30,7 @@ _This is editable in the [`clip.py`](https://github.com/wlawt/clipit/blob/master
 The frontend used Next.js, as it this was also a learning opportunity for me
 to try out new JS frameworks. 
 
-One of the major design decisions was to minimize the footprint and intuitive 
+One of the major design decisions was to minimize the footprint and make it intuitive 
 as Snipping Tool or Lightshot. The idea is to serve these video clips via a 
 link through an ngrok tunnel and send the link with the latest clip.
 
@@ -53,8 +57,10 @@ npm run dev
 npm run ngrok
 ```
 
-## Screenshots
+## Implementation challenges
 
-<div align="center">
-  <img src="assets/new demo.jpg" alt="ClipIt Demo">
-</div>
+One particular challenge I faced was running functions concurrently. It turns out 
+that python Thread or Multiprocessing libraries have a [slight delay](https://stackoverflow.com/a/33064260/13283328) in the
+execution of the functions (recording Audio and Video), which doesn't meet my UX requirements. I found that
+I had to press F8 twice inorder to end the Audio recording. However, as [this comment](https://stackoverflow.com/a/54509012/13283328)
+suggested, the Ray library is able to run both the Audio and Video recording functions at the same time.
