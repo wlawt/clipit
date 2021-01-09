@@ -9,7 +9,7 @@ import subprocess
 
 from datetime import datetime
 from mic import record_to_file
-from win10toast import ToastNotifier
+# from win10toast import ToastNotifier
 
 # Run funcs in parallel
 ray.init()
