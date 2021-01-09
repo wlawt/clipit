@@ -79,7 +79,7 @@ def record():
 
     r = array('h')
 
-    print("Mic recording ...")
+    print("\nMic recording ...")
     while 1:
       # little endian, signed short
       snd_data = array('h', stream.read(CHUNK_SIZE))

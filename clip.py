@@ -9,6 +9,7 @@ import subprocess
 from datetime import datetime
 from mic import record_to_file
 
+# Run funcs in parallel
 ray.init()
 
 @ray.remote
@@ -39,17 +40,20 @@ while True:
 
     fileName = datetime.now().strftime("%d%m%Y%H%M%S") # avoid name conflict
 
-    file = "./clipit/clips/" + fileName + ".avi"
+    orgClip = "./clipit/clips/" + fileName + ".avi"
     micPath = "./clipit/clips/" + fileName + ".wav"
     clipPath = "./clipit/clips/" + fileName + ".mp4"
     
+    # Run concurrently
     out_vid = VideoRecord.remote()
     out_mic = MicRecord.remote(micPath)
 
     vid, mic = ray.get([out_vid, out_mic])
 
-    cmd = "ffmpeg -i " + file + " -i " + micPath + " -c:v copy -c:a aac " + clipPath
+    # Convert .avi to .mp4 with audio (.wav)
+    cmd = "ffmpeg -i " + orgClip + " -i " + micPath + " -c:v copy -c:a aac " + clipPath
     subprocess.call(cmd, shell=True)
 
-    os.remove(file)
+    # Remove .avi and .wav files
+    os.remove(orgClip)
     os.remove(micPath)
